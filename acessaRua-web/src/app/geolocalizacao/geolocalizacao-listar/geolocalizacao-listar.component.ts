@@ -6,8 +6,7 @@ import { GeolocalizacaoService } from '../geolocalizacao.service';
   templateUrl: './geolocalizacao-listar.component.html',
   styleUrls: ['./geolocalizacao-listar.component.css']
 })
-export class GeolocalizacaoListarComponent implements OnInit {
-  
+export class GeolocalizacaoListarComponent implements OnInit { 
     geolocalizacoes : any;
     constructor(private geolocalizacaoService : GeolocalizacaoService) { }
     //this eu refencio alguma váriavel que está dentro da classe atual.
@@ -17,6 +16,17 @@ export class GeolocalizacaoListarComponent implements OnInit {
         console.log(data);
         this.geolocalizacoes = data;
       });
+      this.atualizarLista()
     }
-  
-  }
+    atualizarLista(){
+      this.geolocalizacaoService.listarTudo().subscribe(dados => this.geolocalizacoes = dados)
+    }
+    excluir(id: string){
+      if(confirm('Deseja realmente exlcuir este Local?')){
+        this.geolocalizacaoService.excluir(id).subscribe(
+          () => this.atualizarLista(),
+          erro => console.error(erro)
+        )
+      } 
+    }
+}

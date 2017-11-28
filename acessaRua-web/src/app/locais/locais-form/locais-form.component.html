@@ -32,16 +32,25 @@
 
     <div class="form-group">
         <label for= "imagem">Imagem</label>
-        <input type="text" id="imagem" name="imagem"
-        [(ngModel)] = 'model.imagem' class="form-control"/>
+        <select id="imagem" name="imagem"
+            [(ngModel)] = 'model.imagem' class="form-control">
+            <option value="">(Selecione)</option>
+            <option *ngFor="let ima of imagem | async" [ngValue]="ima._id">
+                {{ima.url}}
+            </option>
+        </select>
     </div>
 
     <div class="form-group">
-        <label for= "localizacao">Localizaçâo</label>
-        <input type="text" id="localizacao" name="localizacao"
-        [(ngModel)] = 'model.localizacao' class="form-control"/>
+        <label for= "Localizacao">Localizacao</label>
+        <select id="Localizacao" name="Localizacao"
+            [(ngModel)] = 'model.Localizacao' class="form-control">
+            <option value="">(Selecione)</option>
+            <option *ngFor="let geo of geolocalizacao" [ngValue]="geo._id">
+                {{geo.latitude}}
+            </option>
+        </select>
     </div>
-
     <div class="form-group">
         <input type="submit" class="btn btn-primary" value="Enviar"/>
     </div>

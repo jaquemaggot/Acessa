@@ -16,5 +16,17 @@ export class ComentarioListarComponent implements OnInit {
       this.comentarios = data;
       console.log(`teste: `, this.comentarios);
     });
+    this.atualizarLista();
+  }
+  atualizarLista(){
+    this.comentarioService.listarTudo().subscribe(dados => this.comentarios = dados)
+  }
+  excluir(id: string){
+    if(confirm('Deseja realmente exlcuir este Local?')){
+      this.comentarioService.excluir(id).subscribe(
+        () => this.atualizarLista(),
+        erro => console.error(erro)
+      )
+    } 
   }
 }

@@ -4,14 +4,26 @@
         <tr>
           <th>Texto</th>
           <th>Imagem</th>
-
+          <th>Excluir</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let comentario of comentarios">
-          <td>{{ comentario.texto }}</td>
+          <td>
+            <a [routerLink]="['/comentarios',comentario._id]">
+              {{ comentario.texto }}
+           </a>
+          </td>
           <td>{{ comentario.imagem.url }}</td>
+          <td>
+            <button class="btn btn-default btn-danger" (click)="excluir(comentario._id)">
+              <span class="glyphicon glyphicon-trash"></span>
+            </button>
+          </td>
         </tr>
       </tbody>
-    </table>      
+    </table>     
+    <a routerLink="/imagens/cadastrar" class="btn btn-success">
+      Nova Imagem
+    </a> 
 </div>

@@ -10,13 +10,29 @@
         <th>
         Zoom
         </th>
+        <th>
+            
+        </th>
     </thead>
     <tbody>
         <tr *ngFor = "let geolocalizacao of geolocalizacoes">
-        <td>{{ geolocalizacao.latitude }}</td>
+        <td>
+          <a [routerLink]="['/geolocalizacoes',geolocalizacao._id]">
+            {{ geolocalizacao.latitude }}
+          </a>
+        </td>
         <td>{{ geolocalizacao.longitude }}</td>
         <td>{{ geolocalizacao.zoom }}</td>
+        <td>
+            <button class="btn btn-default btn-danger" (click)="excluir(geolocalizacao._id)">
+              Excluir
+              <span class="glyphicon glyphicon-trash"></span>
+            </button>
+        </td>
         </tr>
     </tbody>
   </table>
+  <a routerLink="/geolocalizacoes/cadastrar" class="btn btn-success">
+    Nova Geolocalizacao
+  </a>
 </div>

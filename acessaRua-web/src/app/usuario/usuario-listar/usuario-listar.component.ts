@@ -17,6 +17,19 @@ export class UsuarioListarComponent implements OnInit {
     this.usuarioService.listarTudo().subscribe( data => {
       this.usuarios = data;
     });
+    this.atualizarLista();
+  }
+
+  atualizarLista(){
+    this.usuarioService.listarTudo().subscribe(dados => this.usuarios = dados)
+  }
+  excluir(id: string){
+    if(confirm('Deseja realmente exlcuir este Local?')){
+      this.usuarioService.excluir(id).subscribe(
+        () => this.atualizarLista(),
+        erro => console.error(erro)
+      )
+    } 
   }
 
 }

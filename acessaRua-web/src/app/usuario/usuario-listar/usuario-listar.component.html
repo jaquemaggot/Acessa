@@ -14,14 +14,29 @@
         <th>
             Senha
         </th>
+        <th>
+
+        </th>
       <tbody>
         <tr *ngFor = "let usuario of usuarios">
-          <td>{{ usuario.nome }}</td>
+          <td>
+            <a [routerLink]="['/usuarios',usuario._id]">
+              {{ usuario.nome }}
+            </a>
+          </td>
           <td>{{ usuario.telefone }}</td>
           <td>{{ usuario.login }}</td>
           <td>{{ usuario.senha }}</td>
+          <td>
+              <button class="btn btn-default btn-danger" (click)="excluir(usuario._id)">
+                <span class="glyphicon glyphicon-trash"></span>
+              </button>
+          </td>
         </tr>
       </tbody>
     </table>
+    <a routerLink="/usuarios/cadastrar" class="btn btn-success">
+      Novo Usuario
+    </a>
   </div>
 
