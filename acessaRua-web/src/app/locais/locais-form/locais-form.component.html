@@ -1,0 +1,49 @@
+<div class="container" id="t">
+    <form #locaisForm="ngForm" (ngSubmit)="enviar()">
+    <!-- <pre>{{ model | json }}</pre> -->
+    <div class="form-group">
+        <label for= "cep">Cep</label>
+        <input type="number" id="cep" name="cep"
+        [(ngModel)] = 'model.cep' class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label for= "endereco">Endereço</label>
+        <input type="text" id="endereco" name="endereco"
+        [(ngModel)] = 'model.endereco' class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label for= "bairro">Bairro</label>
+        <input type="text" id="bairro" name="bairro"
+        [(ngModel)] = 'model.bairro' class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label for= "usuario">Usuario</label>
+        <select id="usuario" name="usuario"
+            [(ngModel)] = 'model.usuario' class="form-control">
+            <option value="">(Selecione)</option>
+            <option *ngFor="let use of usuario | async" [ngValue]="use._id">
+                {{use.nome}}
+            </option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for= "imagem">Imagem</label>
+        <input type="text" id="imagem" name="imagem"
+        [(ngModel)] = 'model.imagem' class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label for= "localizacao">Localizaçâo</label>
+        <input type="text" id="localizacao" name="localizacao"
+        [(ngModel)] = 'model.localizacao' class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Enviar"/>
+    </div>
+    </form>
+</div>

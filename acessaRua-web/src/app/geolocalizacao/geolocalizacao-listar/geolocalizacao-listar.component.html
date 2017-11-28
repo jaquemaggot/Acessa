@@ -1,0 +1,22 @@
+<div class="container" id="t">
+  <table class="table">
+    <thead class="thead-inverse">
+        <th>
+        Latitude
+        </th>
+        <th>
+        Longitude
+        </th>
+        <th>
+        Zoom
+        </th>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let geolocalizacao of geolocalizacoes">
+        <td>{{ geolocalizacao.latitude }}</td>
+        <td>{{ geolocalizacao.longitude }}</td>
+        <td>{{ geolocalizacao.zoom }}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>

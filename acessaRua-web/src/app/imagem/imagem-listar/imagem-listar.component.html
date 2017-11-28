@@ -1,0 +1,32 @@
+
+<div class="container" id="t">
+  <table class="table table-bordered table-inversed ">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Url</th>
+          <th>Usuario</th>
+          <th>
+            Excluir
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let imagem of imagens">
+          <td>
+            <a [routerLink]="['/imagens',imagem._id]">
+               {{ imagem.url }}
+            </a>
+          </td>
+          <td>{{ imagem.usuario.nome}}</td>
+          <td>
+            <button class="btn btn-default btn-danger" (click)="excluir(imagem._id)">
+              <span class="glyphicon glyphicon-trash"></span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>     
+    <a routerLink="/imagens/cadastrar" class="btn btn-success">
+      Nova Imagem
+    </a>
+</div>

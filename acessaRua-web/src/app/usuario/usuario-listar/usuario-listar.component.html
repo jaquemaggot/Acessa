@@ -1,0 +1,27 @@
+
+  <div class="container" id="t">
+    <table class="table">
+      <thead class="thead-inverse">                 
+        <th>
+          Nome
+        </th>
+        <th>
+          Telefone
+        </th> 
+        <th>
+            Login
+        </th>
+        <th>
+            Senha
+        </th>
+      <tbody>
+        <tr *ngFor = "let usuario of usuarios">
+          <td>{{ usuario.nome }}</td>
+          <td>{{ usuario.telefone }}</td>
+          <td>{{ usuario.login }}</td>
+          <td>{{ usuario.senha }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+

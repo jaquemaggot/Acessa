@@ -1,0 +1,17 @@
+<div class="container" id="t">
+  <table class="table">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Texto</th>
+          <th>Imagem</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let comentario of comentarios">
+          <td>{{ comentario.texto }}</td>
+          <td>{{ comentario.imagem.url }}</td>
+        </tr>
+      </tbody>
+    </table>      
+</div>

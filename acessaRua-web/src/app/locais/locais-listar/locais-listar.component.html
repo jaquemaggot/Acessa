@@ -1,0 +1,50 @@
+
+<div class="container" id="t">
+  
+  <table class="table">
+    <thead class="thead-inverse">      
+      <th>
+        Endereço
+      </th>
+      <th>
+        Bairro
+      </th>
+      <th>
+        Cep
+      </th>
+      <th>
+        Imagem
+      </th>
+      <th>
+        Usuario
+      </th>
+      <th>
+        Localizacao
+      </th>
+      <th>
+        Excluir
+      </th>
+    <tbody>
+      <tr *ngFor = "let local of locais">
+        <td>
+          <a [routerLink]="['/locais',local._id]">
+          {{ local.endereco }}
+        </a>
+        </td>
+        <td>{{ local.bairro }}</td>
+        <td>{{ local.cep }}</td>
+        <td>{{ local.imagem.url }}</td>
+        <td>{{ local.usuario.nome }}</td>
+        <td>{{ local.localizacao.latitude }} {{ local.localizacao.longitude }}</td> 
+        <td>
+          <button class="btn btn-default btn-danger" (click)="excluir(local._id)">
+              <span class="glyphicon glyphicon-trash"></span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <a routerLink="/locais/cadastrar" class="btn btn-success">
+    Novo Local
+  </a>
+</div>

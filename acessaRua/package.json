@@ -1,0 +1,32 @@
+{
+  "name": "acessa-rua",
+  "version": "1.0.0",
+  "description": "Aplicativo mobile para ajudar deficientes físicos a identificar em suas rotas, locais com acessibilidade facilitada.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "/home/node/app/node_modules/.bin/nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Jaqueline Aparecida da Silva Santos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "express-load": "^1.1.16",
+    "express-session": "^1.15.6",
+    "method-override": "^2.3.9",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.8",
+    "mongoose-findorcreate": "^2.0.0",
+    "nodemon": "^1.12.1",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^1.0.0"
+  },
+  "devDependencies": {}
+}

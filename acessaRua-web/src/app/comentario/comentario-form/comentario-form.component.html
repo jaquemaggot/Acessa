@@ -1,0 +1,24 @@
+<div class="container" id="t">
+  <form #ComentarioForm="ngForm" (ngSubmit)="enviar()">
+
+  <div class="form-group">
+      <label for= "texto">Texto</label>
+      <input type="text" id="texto" name="texto"
+      [(ngModel)] = 'model.texto' class="form-control"/>
+  </div>
+
+  <div class="form-group">
+      <label for= "imagem">Imagem</label>
+      <select id="imagem" name="imagem"
+          [(ngModel)] = 'model.imagem' class="form-control">
+          <option value="">(Selecione)</option>
+          <option *ngFor="let ima of imagem" [ngValue]="ima._id">
+              {{ima.url}}
+          </option>
+      </select>
+  </div>
+  <div class="form-group">
+      <input type="submit" class="btn btn-primary" value="Enviar"/>
+  </div>
+  </form>
+</div>
