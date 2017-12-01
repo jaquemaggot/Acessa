@@ -48,7 +48,7 @@ export class LocaisFormComponent implements OnInit {
     )
   }
   enviar(){
-    console.log('teste');
+    console.log(this.model);
     // Preservando o roteador para evitar a perda de referência ao objeto.
     let roteador = this.router
     this.lo.salvar(this.model).subscribe(

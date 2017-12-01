@@ -44,7 +44,7 @@
     <div class="form-group">
         <label for= "Localizacao">Localizacao</label>
         <select id="Localizacao" name="Localizacao"
-            [(ngModel)] = 'model.Localizacao' class="form-control">
+            [(ngModel)] = 'model.localizacao' class="form-control">
             <option value="">(Selecione)</option>
             <option *ngFor="let geo of geolocalizacao" [ngValue]="geo._id">
                 {{geo.latitude}}
